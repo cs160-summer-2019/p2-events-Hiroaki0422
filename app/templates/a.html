@@ -11,6 +11,42 @@
 
 	<script src="{% static '/vendors/jquery/jquery-3.3.1.min.js' %}"></script>
 	<script src="{% static '/vendors/jquery-ui/jquery-ui.min.js' %}"></script>
+  <script>
+    $( document ).ready(function() {
+        console.log( "document loaded" );
+      
+      $('.bg-purple').on('click', () =>{
+        console.log('the purple was clicked')
+        $('.bg-purple').hide()
+      })
+      
+      $('.bg-green').on('click', () =>{
+        console.log('the green was clicked')
+        $('.bg-green').hide()
+        $('.bg-blue').hide()
+      })
+      
+      $('.bg-orange').on('click', () =>{
+        console.log('the orange was clicked')
+        $('.bg-orange').hide()
+      })
+      
+      $('#gradient-circle').hover( () =>{
+        console.log('gradient hovered')
+        $('#gradient-circle').hide()
+      })
+      
+      $('#reset').on('click', () =>{
+        console.log('button was clicked')
+        $('.bg-orange').show()
+        $('.bg-purple').show()
+        $('.bg-green').show()
+        $('.bg-blue').show()
+      })
+      
+      
+    });
+  </script>
 
 </head>
 
@@ -21,7 +57,7 @@
 				<h3>Task 1a</h3>
 			</div>
 			<div class="col-6">
-				<button class="btn btn-light float-right">
+				<button id='reset' class="btn btn-light float-right">
 					Reset
 				</button>
 			</div>

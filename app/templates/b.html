@@ -11,6 +11,22 @@
 
 	<script src="{% static '/vendors/jquery/jquery-3.3.1.min.js' %}"></script>
 	<script src="{% static '/vendors/jquery-ui/jquery-ui.min.js' %}"></script>
+  <script>
+    $( document ).ready(function() {
+        var clicked = false;
+      
+        setInterval(()=>{
+          if (!clicked) {
+            $('.shape-container').append('<div class="p2-circle bg-purple"></div>')
+          } 
+        }, 1000);
+        
+        $('.btn').on('click',() => {
+          clicked = true;
+          console.log(clicked)
+        })
+    });
+  </script>
 
 </head>
 
